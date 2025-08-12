@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechGadgets — Ejemplo de Página Web</title>
+  <meta name="description" content="Ejemplo completo de una página web con HTML, CSS y JavaScript: navegación, secciones, estilo responsive, modo oscuro, filtros y formulario." />
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <nav class="nav container" aria-label="Principal">
+      <a class="logo" href="#home" aria-label="Ir al inicio">
+        <span class="logo-badge" aria-hidden="true"></span>
+        TechGadgets
+      </a>
+      <button class="btn-ghost hamburger" id="btnMenu" aria-expanded="false" aria-controls="mainMenu" aria-label="Abrir menú">☰</button>
+      <div class="menu" id="mainMenu" role="menu">
+        <a href="#features" role="menuitem">Características</a>
+        <a href="#productos" role="menuitem">Productos</a>
+        <a href="#faq" role="menuitem">FAQ</a>
+        <a href="#contacto" role="menuitem">Contacto</a>
+      </div>
+      <div class="actions">
+        <button class="btn-ghost theme-toggle" id="toggleTheme" aria-label="Cambiar tema">🌓</button>
+        <a class="btn cart" href="#productos" aria-label="Ver carrito (demo)">🛒<span class="cart-count" id="cartCount">0</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="container hero">
+    <div>
+      <span class="chip">Ejemplo real — HTML + CSS + JS</span>
+      <h1>Todo lo que una landing moderna necesita</h1>
+      <p>Diseño responsivo, modo oscuro, filtros de productos, acordeón de preguntas frecuentes y un formulario validado con JavaScript. Listo para que lo uses de base en tus proyectos.</p>
+      <div style="display:flex; gap:.5rem; margin-top:1rem">
+        <a class="btn" href="#productos">Explorar productos</a>
+        <a class="btn btn-ghost" href="#contacto">Contáctanos</a>
+      </div>
+      <div class="stats">
+        <div class="stat">⚡ Carga rápida</div>
+        <div class="stat">🔒 Accesible</div>
+        <div class="stat">📱 Responsive</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="card">
+        <h3 class="title" style="margin:0 0 .25rem">Panel en vivo</h3>
+        <p class="muted" id="clock">Cargando hora…</p>
+        <div class="grid grid-3" style="margin-top:1rem">
+          <div class="card" style="padding: .9rem">
+            <div class="muted">Carrito</div>
+            <div style="font-size:1.75rem; font-weight:800"><span id="miniCart">0</span></div>
+          </div>
+          <div class="card" style="padding: .9rem">
+            <div class="muted">Tema</div>
+            <div id="miniTheme" style="font-size:1.2rem; font-weight:800">—</div>
+          </div>
+          <div class="card" style="padding: .9rem">
+            <div class="muted">Visitas (demo)</div>
+            <div id="visits" style="font-size:1.75rem; font-weight:800">—</div>
+          </div>
+        </div>
+      </div>
+      <div class="blob" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="title">Características clave</h2>
+      <p class="subtitle">Estructura semántica, estilos modernos y JavaScript funcional.</p>
+      <div class="grid grid-3" style="margin-top:1rem">
+        <div class="card feature">
+          <div class="icon">R</div>
+          <div>
+            <h3>Responsive</h3>
+            <p class="muted">Se adapta a móviles, tabletas y escritorio con Grid y Flex.</p>
+          </div>
+        </div>
+        <div class="card feature">
+          <div class="icon">🌙</div>
+          <div>
+            <h3>Modo oscuro</h3>
+            <p class="muted">Persistencia del tema en <code>localStorage</code> y preferencia del sistema.</p>
+          </div>
+        </div>
+        <div class="card feature">
+          <div class="icon">⚙️</div>
+          <div>
+            <h3>JS práctico</h3>
+            <p class="muted">Menú móvil, filtros, acordeón, validación y toasts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCTOS ===================== -->
+  <section id="productos" class="section">
+    <div class="container">
+      <div style="display:flex; align-items:end; justify-content:space-between; gap:1rem; flex-wrap:wrap">
+        <div>
+          <h2 class="title">Catálogo</h2>
+          <p class="subtitle">Filtra por categoría y añade al carrito (demo).</p>
+        </div>
+        <div class="toolbar" role="toolbar" aria-label="Filtros de productos">
+          <button class="btn btn-ghost" data-filter="all">Todos</button>
+          <button class="btn btn-ghost" data-filter="audio">Audio</button>
+          <button class="btn btn-ghost" data-filter="gaming">Gaming</button>
+          <button class="btn btn-ghost" data-filter="smart">Smart</button>
+        </div>
+      </div>
+
+      <div class="grid grid-3" id="productGrid">
+        <!-- Producto 1 -->
+        <article class="card product" data-category="audio">
+          <div class="thumb">
+            <span class="badge">Nuevo</span>
+            <img src="https://images.unsplash.com/photo-1518443895914-6d1b75c54c53?q=80&w=1200&auto=format&fit=crop" alt="Audífonos inalámbricos" loading="lazy">
+          </div>
+          <h3>Audífonos Pro X</h3>
+          <p class="muted">Cancelación activa de ruido, 30h de batería.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between">
+            <span class="price">$1,499</span>
+            <button class="btn add" data-id="1" data-name="Audífonos Pro X">Añadir</button>
+          </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="card product" data-category="gaming">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1603484477859-abe6a73f9360?q=80&w=1200&auto=format&fit=crop" alt="Control inalámbrico" loading="lazy">
+          </div>
+          <h3>Control Wireless S</h3>
+          <p class="muted">Precisión y baja latencia para sesiones largas.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between">
+            <span class="price">$899</span>
+            <button class="btn add" data-id="2" data-name="Control Wireless S">Añadir</button>
+          </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="card product" data-category="smart">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1596496181871-781c1f1c1f4e?q=80&w=1200&auto=format&fit=crop" alt="Foco inteligente" loading="lazy">
+          </div>
+          <h3>Foco Smart RGB</h3>
+          <p class="muted">Control por app y asistentes de voz.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between">
+            <span class="price">$249</span>
+            <button class="btn add" data-id="3" data-name="Foco Smart RGB">Añadir</button>
+          </div>
+        </article>
+
+        <!-- Producto 4 -->
+        <article class="card product" data-category="audio">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1552558636-96a09c2b35b9?q=80&w=1200&auto=format&fit=crop" alt="Bocina Bluetooth" loading="lazy">
+          </div>
+          <h3>Bocina Go Mini</h3>
+          <p class="muted">Pequeña, potente y resistente al agua.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between">
+            <span class="price">$599</span>
+            <button class="btn add" data-id="4" data-name="Bocina Go Mini">Añadir</button>
+          </div>
+        </article>
+
+        <!-- Producto 5 -->
+        <article class="card product" data-category="gaming">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop" alt="Mouse gamer" loading="lazy">
+          </div>
+          <h3>Mouse GX Ultra</h3>
+          <p class="muted">Sensor óptico 26K DPI, RGB dinámico.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between">
+            <span class="price">$749</span>
+            <button class="btn add" data-id="5" data-name="Mouse GX Ultra">Añadir</button>
+          </div>
+        </article>
+
+        <!-- Producto 6 -->
+        <article class="card product" data-category="smart">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1518441902113-c8d3a7b1d9a5?q=80&w=1200&auto=format&fit=crop" alt="Reloj inteligente" loading="lazy">
+          </div>
+          <h3>Smartwatch Fit</h3>
+          <p class="muted">GPS, NFC y métricas de salud en tiempo real.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between">
+            <span class="price">$1,799</span>
+            <button class="btn add" data-id="6" data-name="Smartwatch Fit">Añadir</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 class="title">Preguntas frecuentes</h2>
+      <p class="subtitle">Aclaramos dudas típicas de envíos, garantías y soporte.</p>
+
+      <details class="card">
+        <summary>¿Cómo funcionan los envíos?</summary>
+        <p class="muted">En este demo no hay envíos reales. En un proyecto real, integra tu paquetería favorita y muestra tiempos/costos por código postal.</p>
+      </details>
+      <details class="card">
+        <summary>¿Puedo devolver un producto?</summary>
+        <p class="muted">Sí (demo). Agrega tu política: plazos, estado del producto y proceso de recolección.</p>
+      </details>
+      <details class="card">
+        <summary>¿Tienen soporte técnico?</summary>
+        <p class="muted">Claro. Puedes añadir un chat o un sistema de tickets con correo y número de pedido.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACTO ===================== -->
+  <section id="contacto" class="section">
+    <div class="container grid grid-2">
+      <div>
+        <h2 class="title">Hablemos de tu proyecto</h2>
+        <p class="subtitle">Completa el formulario y te contactamos. Validación en el cliente con JS.</p>
+        <div class="card" style="margin-top:1rem">
+          <form id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Tu nombre" required minlength="2" />
+              <div class="error" id="err-name"></div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+              <div class="error" id="err-email"></div>
+            </div>
+            <div class="field">
+              <label for="topic">Tema</label>
+              <select id="topic" name="topic">
+                <option value="soporte">Soporte</option>
+                <option value="ventas">Ventas</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" placeholder="Cuéntanos…" required minlength="10"></textarea>
+              <div class="hint">Mínimo 10 caracteres.</div>
+              <div class="error" id="err-message"></div>
+            </div>
+            <div style="display:flex; gap:.5rem; align-items:center; justify-content:space-between; flex-wrap:wrap">
+              <button class="btn" type="submit">Enviar</button>
+              <label style="display:flex; align-items:center; gap:.5rem">
+                <input id="newsletter" type="checkbox" /> Suscribirme a novedades
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Datos de ejemplo</h3>
+        <p class="muted">Puedes reemplazar con datos reales: dirección, horarios, redes, etc.</p>
+        <ul>
+          <li>📍 San Luis Potosí, MX</li>
+          <li>⏰ <span id="localTime">—</span></li>
+          <li>✉️ soporte@techgadgets.demo</li>
+        </ul>
+        <hr style="border-color: rgba(255,255,255,.12)"/>
+        <p class="muted">¿Prefieres escribirnos directo? <a href="#contacto">Formulario ↑</a></p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap">
+      <div>© <span id="year"></span> TechGadgets. Demo educativo.</div>
+      <div style="display:flex; gap:.5rem; align-items:center">
+        <input id="emailSub" type="email" placeholder="Tu email" aria-label="Email para suscripción" style="background:var(--bg-soft); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:.55rem .7rem">
+        <button class="btn" id="btnSub">Suscribirme</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante y toast -->
+  <button id="toTop" aria-label="Volver arriba">↑</button>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+<!-- Al final del <body> para que cargue después del HTML -->
+<script src="java.js"></script>
+</body>
+</html>

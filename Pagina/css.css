@@ -1,0 +1,15 @@
+/* estilos.css */
+h1 {
+    color: red;
+    text-align: center;
+}
+body {
+    background-color: hsl(327, 60%, 26%); /* color para el área de margen */
+  }
+
+div {
+    background-color: green; /* color para el área de padding */
+    margin: 40px; /* espacio fuera del elemento */
+    padding: 20px; /* espacio dentro del elemento */
+    border: 10px solid blue; /* borde */
+}
