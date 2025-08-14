@@ -8,17 +8,34 @@
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <img src="" alt="logo mostrar">
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Project</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
-        <a href="#" class="btn"><button>Contact</button></a>
-    </header>
+  <div class="logo">
+    <img src="Logo.jpg" alt="logo mostrar">
+  </div>
+
+  <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+    ☰
+  </button>
+
+  <nav id="nav" class="nav">
+    <ul class="nav-links">
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Project</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <a href="#" class="btn"><button>Contact</button></a>
+  </nav>
+  
+</header>
+
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('#nav');
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
+
 </body>
 </html>
