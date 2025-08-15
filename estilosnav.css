@@ -103,9 +103,20 @@ body {
   font-weight: 500;
   margin-top: -50px;
   color: #5a3a2e;  /* chocolate */
+  cursor:pointer;
+}
+
+
+.atras {
+  cursor:pointer;
+}
+
+.adelante {
+  cursor:pointer;
 }
 
 .puntos .bold{
+  cursor:pointer;
   font-weight: 700;
   margin-left: 10px;
   margin-right: 10px;
