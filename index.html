@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilosnav.css">
+</head>
+<body>
+
+    <!-- Barra de navegacion -->
+    <header class="header">
+      <div class="logo"> <!-- Logo -->
+        <img src="Imagenes/Logo.jpg" alt="logo mostrar">
+      </div>
+
+      <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        ☰
+      </button>
+
+      <nav id="nav" class="nav">
+        <ul class="nav-links">
+          <li><a href="#fq">Services</a></li>
+          <li><a href="#">Tienda</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <a href="#contacto" class="btn"><button>Contact</button></a>
+      </nav>
+    </header>
+
+     <!-- CARRUSEL -->
+    <div class="carrusel">
+        <div class="atras">
+            <img id="atras" src="Imagenes/atras.svg" alt="atras" loading="lazy">
+        </div>
+
+        <div class="imagenes">
+            <div id="img">
+                <img class="img" src="Imagenes/foto1.jpg" alt="imagen 1" loading="lazy">
+            </div>
+            
+            <div id="texto" class="texto">
+                <h3>Gelatina</h3>
+                <p>Hecha con todo el amor para el comensal main</p>
+            </div>
+        </div>
+
+        <div class="adelante" id="adelante">
+            <img src="Imagenes/adelante.svg" alt="adelante" loading="lazy">
+        </div>
+    </div>
+
+    <div class="puntos" id="puntos"></div>
+
+    <!-- ACERCA DE NOSOTROS -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <div class="about-text">
+          <h2>Acerca de Nosotros</h2>
+          <p>
+            Somos una familia apasionada por la repostería que cuida cada detalle:
+            <strong>presentación impecable</strong>, ingredientes seleccionados y
+            gelatinas con diseños creativos para cualquier ocasión. Nuestro objetivo
+            es que cada entrega se sienta <em>hecha con cariño</em> y se vea tan
+            bien como sabe.
+          </p>
+          <ul class="about-list">
+            <li>Diseños personalizados para eventos.</li>
+            <li>Sabores frutales y combinaciones gourmet.</li>
+            <li>Entregas puntuales y trato cercano.</li>
+          </ul>
+        </div>
+
+        <!-- Mapa + logo -->
+        <div class="about-right">
+          <div class="about-logo">
+            <img src="Imagenes/Logo.jpg" alt="Logo Chiispita Gelatinas Gourmet">
+            <div class="about-address">
+              <strong>Estamos en:</strong><br>
+              Av. Salk 1500, San Luis Potosí, SLP
+            </div>
+          </div>
+
+          <div class="map-embed">
+            <iframe
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Av.+Salk+1500,+San+Luis+Potos%C3%AD&output=embed">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SECCIÓN FAQ A PANTALLA COMPLETA -->
+    <section class="faq-section" id="fq">
+      <div class="faq-container">
+        <h2>Preguntas Frecuentes</h2>
+
+        <details class="faq-item">
+          <summary>¿Qué es este sitio?</summary>
+          <p>Es un ejemplo de bloque de preguntas frecuentes.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cómo funciona la sección FAQ?</summary>
+          <p>Al hacer clic en la pregunta, se despliega la respuesta automáticamente.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Puedo personalizar el diseño?</summary>
+          <p>Sí, ajusta colores, márgenes o bordes según tu estilo.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+      <p>© 2025 ChiIspita Gelatinas Gourmet. Todos los derechos reservados.</p>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+      </nav>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('#nav');
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+<script src="app.js"></script>
+
+
+</body>
+</html>

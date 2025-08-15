@@ -1,35 +1,28 @@
-/*
-  CARRUSEL
+* { box-sizing: border-box; margin:0; padding:0; }
 
-  importar tipografia de google fonts
-*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
-body{
-  width: 100vw;
-  height: 100vh;
-  background-color: #e2f1f8;
-  font-family: 'Roboto','sans-serif';
-  margin: 0;
-  padding: 0;
-
-  /* Contenedor */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 70px;
-  overflow: hidden;
-
+/* Fondo pastel suave */
+body { 
+  background:#fff1f7;            /* rosa clarito suave */
+  font-family: 'Courier New', Courier, monospace; 
+  font-size:20px; 
 }
 
+:root{
+  --header-h: 200px;  
+}
+
+/* Tipografía */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ==== CARRUSEL ==== */
 .carrusel{
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: auto;
+  margin-top: 16px; 
 }
 
 .imagenes{
@@ -40,13 +33,13 @@ body{
 }
 
 .img{
-  box-shadow: 0px 4px 10px 0px rgb(0,0,0,0.85);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
   height: 576px;
   width: 1134px;
-  border-radius: 15px;
+  border-radius: 15px ;
   margin: 5px;
   object-fit: cover;
-  filter: saturate(174%);
+  filter: saturate(175%);
 }
 
 .texto{
@@ -56,7 +49,7 @@ body{
   transform: translateY(0px);
   margin-bottom: 9px;
   backdrop-filter: blur(20px);
-  background-color: rgba(63,106,138,0.21);
+  background-color: rgba(255, 122, 182, 0.25);   /* rosa fresa translúcido */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +67,7 @@ body{
 .texto p{
   align-items: center;
   padding: 20px;
-  color: white;
+  color:white;
   font-size: 0px;
   font-weight: 300;
 }
@@ -86,17 +79,16 @@ body{
 }
 
 .imagenes:hover .texto{
-  transition: height 1s,transform1s,background-color 1s;
+  transition: height 1s, transform 1s, background-color 1s;
   transform: translateY(-150px);
   height: 300px;
-  background-color: rgba(63,106,138,0.71);
+  background-color: rgba(249, 115, 22, 0.75);   /* mango/durazno intenso */
 }
 
-.imagene:hover .texto p{
-  transition: font-sise 0s .2s linear;
+.imagenes:hover .texto p{
+  transition: font-size 0s .2s linear;
   font-size: 23px;
   font-weight: 300;
-
   text-shadow: 0px 0px 10px #000000;
 }
 
@@ -105,34 +97,22 @@ body{
   align-items: center;
   justify-content: center;
 }
+
 .puntos p{
   font-size: 100px;
   font-weight: 500;
   margin-top: -50px;
-  color: black;
+  color: #5a3a2e;  /* chocolate */
 }
+
 .puntos .bold{
   font-weight: 700;
   margin-left: 10px;
   margin-right: 10px;
-  color: #5E17EB;
+  color: #ff7ab6;  /* acento rosa fresa */
 }
 
-
-
-
-/*
-  CARRUSEL
-*/
-
-:root{
-  --header-h: 200px;  /* misma altura que tu header */
-}
-
-/* Base */
-* { box-sizing: border-box; margin:0; padding:0; }
-body { background:#4a2447; font-family: 'Courier New', Courier, monospace; font-size:20px; }
-
+/* ==== HEADER ==== */
 .header{
   background:#0e161a;
   display:flex;
@@ -140,23 +120,20 @@ body { background:#4a2447; font-family: 'Courier New', Courier, monospace; font-
   justify-content:space-between;
   height:var(--header-h);
   padding:5px 10%;
-  position: relative;                 /* importante para posicionar el nav */
+  position: relative;
   z-index: 10;
 }
 
-/* Logo */
 .logo img{ height:var(--header-h); width:auto; transition:.3s transform; }
 .logo img:hover{ transform:scale(1.1); }
 
-/* Nav (desktop) */
 .nav{
   display:flex;
   align-items:center;
   gap:20px;
-  
 }
 .nav .nav-links{
-    position:absolute;
+  position:absolute;
   left:50%;
   transform:translateX(-50%);
   display:flex;
@@ -180,35 +157,40 @@ body { background:#4a2447; font-family: 'Courier New', Courier, monospace; font-
   text-decoration:none;
 }
 
-.nav-links a:hover{ color:#4a2447; }
+/* Hover acento */
+.nav-links a:hover{ color:#ff7ab6; }   /* rosa fresa */
 
 .nav-links{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .btn{
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .btn button{
   text-decoration: none;
   font-weight:700;
   font-size: 30px;
-  color:#1b3039;
+  color:#fff;                                      
   padding:20px 40px;
-  background:#eceff1;
+  background: linear-gradient(135deg,#ff7ab6,#f97316); /* fresa → mango */
   border:none; border-radius:50px;
   cursor:pointer;
   transition: transform .2s, background-color .2s, color .2s;
 }
-.btn button:hover{ background:#e2f1f8; color:#4a2447; transform:scale(1.05); }
+.btn button:hover{ 
+  background: linear-gradient(135deg,#f97316,#ff7ab6);
+  color:#fff; 
+  transform:scale(1.05); 
+}
 
 /* Burger */
 .burger{
   display:none;
-  font-size:36px;       /* un poco más grande para que combine */
+  font-size:36px;
   background:none;
   border:none;
   color:#eceff1;
@@ -216,28 +198,14 @@ body { background:#4a2447; font-family: 'Courier New', Courier, monospace; font-
 }
 
 @media (max-width: 1200px){
-  /* Header más compacto */
-  .header{ 
-    padding: 5px 6%; 
-  }
-
-  /* Mostrar hamburguesa */
-  .burger{ 
-    display:block; 
-    font-size:36px; 
-    background:none; 
-    border:none; 
-    color:#eceff1; 
-    cursor:pointer; 
-  }
-
-  /* Menú desplegable debajo del header */
+  .header{ padding: 5px 6%; }
+  .burger{ display:block; font-size:36px; background:none; border:none; color:#eceff1; cursor:pointer; }
   .nav{
     position: absolute;
-    top: 200px;               /* la altura de tu header */
+    top: 200px;
     left: 0; right: 0;
     background:#0e161a;
-    display:none;             /* oculto por defecto */
+    display:none;
     flex-direction: column;
     align-items: stretch;
     padding: 16px 10%;
@@ -247,31 +215,175 @@ body { background:#4a2447; font-family: 'Courier New', Courier, monospace; font-
     overflow:hidden; 
     transition:max-height .25s ease;
   }
-  .nav.open{ 
-    display:flex; 
-    max-height:600px; 
-  }
-
-  /* Links en columna */
+  .nav.open{ display:flex; max-height:600px; }
   .nav .nav-links{
-    position: static;         /* quita el centrado absoluto de desktop */
+    position: static;
     transform: none;
     flex-direction: column;
     gap: 16px;
     padding: 10px 0;
-    order: 0;                 /* primero los links */
+    order: 0;
   }
-
-  /* Botón Contact centrado al final */
   .nav .btn{
-    order: 2;                 /* va después de la lista */
+    order: 2;
     display: block;
-    margin: 16px auto 0;      /* centra horizontal */
-    width: fit-content;       /* ancho al tamaño del botón */
+    margin: 16px auto 0;
+    width: fit-content;
   }
   .nav .btn button{
-    font-size: 28px;          /* un poco más chico que desktop */
+    font-size: 28px;
     padding: 14px 28px;
   }
 }
 
+
+/* ── ACERCA DE NOSOTROS ───────────────────────────── */
+.about-section{
+  width:100%;
+  background:#fff;                 /* banda clara que separa del fondo rosa */
+  border-top:1px solid #eee;
+  border-bottom:1px solid #eee;
+}
+.about-container{
+  width:min(95%,1280px);
+  margin:0 auto;
+  padding: clamp(32px, 6vw, 80px) clamp(16px, 4vw, 48px);
+}
+.about-container h2{
+  text-align:center;
+  font-size:clamp(24px,3vw,32px);
+  margin:0 0 24px;
+  color:#5a3a2e;                   /* chocolate (tu paleta) */
+}
+
+/* Grid */
+.about-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap:24px;
+}
+@media (max-width: 980px){
+  .about-grid{ grid-template-columns: 1fr; }
+}
+
+/* Cards / contenido */
+.about-card{
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:20px 24px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  color:#333;
+}
+.about-card p{ line-height:1.7; margin-bottom:14px; }
+
+/* Badges con colores de marca */
+.badges{ display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 12px; }
+.badge{
+  display:inline-block; padding:8px 12px; border-radius:999px; font-weight:700;
+  font-size:14px; color:#fff; box-shadow:0 2px 6px rgba(0,0,0,.12);
+}
+.badge-fresa{ background:#ff7ab6; }  /* fresa */
+.badge-menta{ background:#19b39a; }  /* menta */
+.badge-mango{ background:#f97316; }  /* mango */
+
+/* Lista de puntos */
+.about-list{ margin-top:8px; padding-left:0; list-style:none; }
+.about-list li{ margin:8px 0; color:#5a3a2e; }
+
+/* Lado derecho: mapa + logo */
+.about-right{ display:flex; flex-direction:column; gap:16px; }
+
+.map-embed{
+  background:#fafafa; border:1px solid #e5e7eb; border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08); overflow:hidden;
+}
+.map-embed iframe{
+  width:100%; height:320px; border:0; display:block;
+}
+
+/* Logo circular */
+.about-logo{
+  display:flex; align-items:center; justify-content:center;
+  background:#fff; border:1px solid #e5e7eb; border-radius:12px;
+  padding:20px; box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+.about-logo img{
+  width:150px; height:150px; object-fit:cover;
+  border-radius:50%;                 /* circular */
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.about-logo img:hover{
+  transform:scale(1.08);
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+
+.about-address{ 
+  color:#5a3a2e; 
+  line-height:1.4; 
+  text-align:center;
+}
+
+
+/* ==== FAQ ==== */
+.faq-section{
+  width: 100%;
+  background: #fff7fb;     /* rosita pastel claro */
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.faq-container{
+  width: min(95%, 1280px);
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 80px) clamp(16px, 4vw, 48px);
+}
+
+.faq-container h2{
+  text-align: center;
+  font-size: clamp(24px, 3vw, 32px);
+  margin: 0 0 24px;
+  color: #5a3a2e; /* chocolate */
+}
+
+.faq-item{
+  width: 100%;
+  margin: 12px 0;
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffe5f1;   /* fondo rosado suave */
+}
+
+.faq-item summary{
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  color: #5a3a2e;
+}
+
+.faq-item p{
+  margin-top: 10px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  background: #0e161a;     
+  color: #eee;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+.footer nav { margin-top: 10px; }
+.footer nav a {
+  color: #eee;
+  margin: 0 12px;
+  text-decoration: none;
+  transition: color .3s;
+}
+.footer nav a:hover {
+  color: #ff7ab6;         /* rosa fresa */
+}
