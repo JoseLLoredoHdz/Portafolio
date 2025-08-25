@@ -1,20 +1,20 @@
 let imagenes = [
     {
-        "url": "Imagenes/foto1.jpg",
-        "nombre": "Gelatina 1",
-        "descripcion": "Hecha con todo el amor para el comensal"
+        "url": "Imagenes/gelatina6.jpeg",
+        "nombre": "Gelatina de Gansito",
+        "descripcion": "Hecha con variedad de gansito y un toque de chocolate ideal para fiestas"
 
     },
     {
-        "url": "Imagenes/foto2.jpg",
-        "nombre": "Gelatina 2",
-        "descripcion": "Hecha con todo el amor para el comensal"
+        "url": "Imagenes/gelatina2.jpeg",
+        "nombre": "Gelatina de Fresas",
+        "descripcion": "Hecha con quesocrema y saboritizantes sabor fresa ideal para regalar"
 
     },
     {
-        "url": "Imagenes/foto3.jpg",
-        "nombre": "Gelatina 3",
-        "descripcion": "Hecha con todo el amor para el comensal"
+        "url": "Imagenes/gelatina3.jpeg",
+        "nombre": "Gelatina de mazapan",
+        "descripcion": "Hecha con todo el amor y cuidado que tiene que tener un mazapan ideal para consentirte"
 
     },
 ]

@@ -34,8 +34,8 @@ body {
 
 .img{
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
-  height: 576px;
-  width: 1134px;
+  height: 80vh;
+  width: 80vh;
   border-radius: 15px ;
   margin: 5px;
   object-fit: cover;
@@ -299,8 +299,75 @@ body {
 .badge-mango{ background:#f97316; }  /* mango */
 
 /* Lista de puntos */
-.about-list{ margin-top:8px; padding-left:0; list-style:none; }
-.about-list li{ margin:8px 0; color:#5a3a2e; }
+.about-text {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #4a2c2a;
+  line-height: 1.7;
+}
+
+.about-text h2 {
+  font-size: 50px;
+  color: #3e1f1c;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  border-bottom: 2px solid #e7b89c;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.about-text p {
+  font-size: 30px;    /* Un tamaño cómodo, no tan exagerado como 40px */
+  line-height: 1.9;   /* Más espacio entre líneas */
+  max-width: 1050px;   /* Controla el ancho para que no se vea comprimido */
+  margin: 20px auto;  /* Centra el párrafo */
+  text-align: justify; /* Mantiene las líneas alineadas */
+  color: #3e1f1c;
+}
+
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-list li {
+  position: relative;
+  margin: 12px 0;
+  padding-left: 28px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #3e1f1c;
+}
+
+.about-list li::before {
+  content: "";                 /* 1) necesario para que exista */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* centra verticalmente */
+  width: 20px;                 /* 1) tamaño del icono */
+  height: 20px;
+  background: url("../Imagenes/iconogelatina.png") no-repeat center / contain; /* 4) ruta */
+}
+
+/* Efecto hover para hacerlo interactivo */
+.about-list li:hover {
+  color: #a64b2a;
+  transform: translateX(5px);
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+
 
 /* Lado derecho: mapa + logo */
 .about-right{ display:flex; flex-direction:column; gap:16px; }
